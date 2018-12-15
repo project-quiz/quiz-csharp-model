@@ -26,7 +26,7 @@ namespace Data.Question {
           string.Concat(
             "ChdRdWVzdGlvbi9RdWVzdGlvbi5wcm90bxINRGF0YS5RdWVzdGlvbhoVUXVl",
             "c3Rpb24vQW5zd2VyLnByb3RvIk4KCFF1ZXN0aW9uEgwKBGd1aWQYASABKAkS",
-            "DAoEdHlwZRgCIAEoBRImCgdhbnN3ZXJzGAMgASgLMhUuRGF0YS5RdWVzdGlv",
+            "DAoEdHlwZRgCIAEoBRImCgdhbnN3ZXJzGAMgAygLMhUuRGF0YS5RdWVzdGlv",
             "bi5BbnN3ZXJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Data.Question.AnswerReflection.Descriptor, },
@@ -65,7 +65,7 @@ namespace Data.Question {
     public Question(Question other) : this() {
       guid_ = other.guid_;
       type_ = other.type_;
-      answers_ = other.answers_ != null ? other.answers_.Clone() : null;
+      answers_ = other.answers_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -98,13 +98,12 @@ namespace Data.Question {
 
     /// <summary>Field number for the "answers" field.</summary>
     public const int AnswersFieldNumber = 3;
-    private global::Data.Question.Answer answers_;
+    private static readonly pb::FieldCodec<global::Data.Question.Answer> _repeated_answers_codec
+        = pb::FieldCodec.ForMessage(26, global::Data.Question.Answer.Parser);
+    private readonly pbc::RepeatedField<global::Data.Question.Answer> answers_ = new pbc::RepeatedField<global::Data.Question.Answer>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Data.Question.Answer Answers {
+    public pbc::RepeatedField<global::Data.Question.Answer> Answers {
       get { return answers_; }
-      set {
-        answers_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +121,7 @@ namespace Data.Question {
       }
       if (Guid != other.Guid) return false;
       if (Type != other.Type) return false;
-      if (!object.Equals(Answers, other.Answers)) return false;
+      if(!answers_.Equals(other.answers_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,7 +130,7 @@ namespace Data.Question {
       int hash = 1;
       if (Guid.Length != 0) hash ^= Guid.GetHashCode();
       if (Type != 0) hash ^= Type.GetHashCode();
-      if (answers_ != null) hash ^= Answers.GetHashCode();
+      hash ^= answers_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -153,10 +152,7 @@ namespace Data.Question {
         output.WriteRawTag(16);
         output.WriteInt32(Type);
       }
-      if (answers_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Answers);
-      }
+      answers_.WriteTo(output, _repeated_answers_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,9 +167,7 @@ namespace Data.Question {
       if (Type != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
       }
-      if (answers_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Answers);
-      }
+      size += answers_.CalculateSize(_repeated_answers_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -191,12 +185,7 @@ namespace Data.Question {
       if (other.Type != 0) {
         Type = other.Type;
       }
-      if (other.answers_ != null) {
-        if (answers_ == null) {
-          answers_ = new global::Data.Question.Answer();
-        }
-        Answers.MergeFrom(other.Answers);
-      }
+      answers_.Add(other.answers_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -217,10 +206,7 @@ namespace Data.Question {
             break;
           }
           case 26: {
-            if (answers_ == null) {
-              answers_ = new global::Data.Question.Answer();
-            }
-            input.ReadMessage(answers_);
+            answers_.AddEntriesFrom(input, _repeated_answers_codec);
             break;
           }
         }
