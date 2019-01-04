@@ -25,13 +25,12 @@ namespace Data {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChFCYXNlTWVzc2FnZS5wcm90bxIERGF0YRoZZ29vZ2xlL3Byb3RvYnVmL2Fu",
-            "eS5wcm90byJOCgtCYXNlTWVzc2FnZRIKCgJpZBgBIAEoBRIMCgR0eXBlGAIg",
-            "ASgFEiUKB21lc3NhZ2UYAyABKAsyFC5nb29nbGUucHJvdG9idWYuQW55YgZw",
-            "cm90bzM="));
+            "eS5wcm90byJACgtCYXNlTWVzc2FnZRIKCgJpZBgBIAEoBRIlCgdtZXNzYWdl",
+            "GAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Data.BaseMessage), global::Data.BaseMessage.Parser, new[]{ "Id", "Type", "Message" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Data.BaseMessage), global::Data.BaseMessage.Parser, new[]{ "Id", "Message" }, null, null, null)
           }));
     }
     #endregion
@@ -64,7 +63,6 @@ namespace Data {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BaseMessage(BaseMessage other) : this() {
       id_ = other.id_;
-      type_ = other.type_;
       message_ = other.message_ != null ? other.message_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -85,19 +83,8 @@ namespace Data {
       }
     }
 
-    /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 2;
-    private int type_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Type {
-      get { return type_; }
-      set {
-        type_ = value;
-      }
-    }
-
     /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 3;
+    public const int MessageFieldNumber = 2;
     private global::Google.Protobuf.WellKnownTypes.Any message_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.WellKnownTypes.Any Message {
@@ -121,7 +108,6 @@ namespace Data {
         return true;
       }
       if (Id != other.Id) return false;
-      if (Type != other.Type) return false;
       if (!object.Equals(Message, other.Message)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -130,7 +116,6 @@ namespace Data {
     public override int GetHashCode() {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
-      if (Type != 0) hash ^= Type.GetHashCode();
       if (message_ != null) hash ^= Message.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -149,12 +134,8 @@ namespace Data {
         output.WriteRawTag(8);
         output.WriteInt32(Id);
       }
-      if (Type != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Type);
-      }
       if (message_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteMessage(Message);
       }
       if (_unknownFields != null) {
@@ -167,9 +148,6 @@ namespace Data {
       int size = 0;
       if (Id != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
-      }
-      if (Type != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
       }
       if (message_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Message);
@@ -187,9 +165,6 @@ namespace Data {
       }
       if (other.Id != 0) {
         Id = other.Id;
-      }
-      if (other.Type != 0) {
-        Type = other.Type;
       }
       if (other.message_ != null) {
         if (message_ == null) {
@@ -212,11 +187,7 @@ namespace Data {
             Id = input.ReadInt32();
             break;
           }
-          case 16: {
-            Type = input.ReadInt32();
-            break;
-          }
-          case 26: {
+          case 18: {
             if (message_ == null) {
               message_ = new global::Google.Protobuf.WellKnownTypes.Any();
             }
