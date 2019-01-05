@@ -25,12 +25,13 @@ namespace Data.Question {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg5RdWVzdGlvbi5wcm90bxINRGF0YS5RdWVzdGlvbhoMQW5zd2VyLnByb3Rv",
-            "Ik4KCFF1ZXN0aW9uEgwKBGd1aWQYASABKAkSDAoEdHlwZRgCIAEoBRImCgdh",
-            "bnN3ZXJzGAMgAygLMhUuRGF0YS5RdWVzdGlvbi5BbnN3ZXJiBnByb3RvMw=="));
+            "IlIKCFF1ZXN0aW9uEgwKBGd1aWQYASABKAkSEAoIcXVlc3Rpb24YAiABKAkS",
+            "JgoHYW5zd2VycxgDIAMoCzIVLkRhdGEuUXVlc3Rpb24uQW5zd2VyYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Data.Question.AnswerReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Data.Question.Question), global::Data.Question.Question.Parser, new[]{ "Guid", "Type", "Answers" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Data.Question.Question), global::Data.Question.Question.Parser, new[]{ "Guid", "Question_", "Answers" }, null, null, null)
           }));
     }
     #endregion
@@ -63,7 +64,7 @@ namespace Data.Question {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Question(Question other) : this() {
       guid_ = other.guid_;
-      type_ = other.type_;
+      question_ = other.question_;
       answers_ = other.answers_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -84,14 +85,14 @@ namespace Data.Question {
       }
     }
 
-    /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 2;
-    private int type_;
+    /// <summary>Field number for the "question" field.</summary>
+    public const int Question_FieldNumber = 2;
+    private string question_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Type {
-      get { return type_; }
+    public string Question_ {
+      get { return question_; }
       set {
-        type_ = value;
+        question_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -119,7 +120,7 @@ namespace Data.Question {
         return true;
       }
       if (Guid != other.Guid) return false;
-      if (Type != other.Type) return false;
+      if (Question_ != other.Question_) return false;
       if(!answers_.Equals(other.answers_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -128,7 +129,7 @@ namespace Data.Question {
     public override int GetHashCode() {
       int hash = 1;
       if (Guid.Length != 0) hash ^= Guid.GetHashCode();
-      if (Type != 0) hash ^= Type.GetHashCode();
+      if (Question_.Length != 0) hash ^= Question_.GetHashCode();
       hash ^= answers_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -147,9 +148,9 @@ namespace Data.Question {
         output.WriteRawTag(10);
         output.WriteString(Guid);
       }
-      if (Type != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Type);
+      if (Question_.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Question_);
       }
       answers_.WriteTo(output, _repeated_answers_codec);
       if (_unknownFields != null) {
@@ -163,8 +164,8 @@ namespace Data.Question {
       if (Guid.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Guid);
       }
-      if (Type != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
+      if (Question_.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Question_);
       }
       size += answers_.CalculateSize(_repeated_answers_codec);
       if (_unknownFields != null) {
@@ -181,8 +182,8 @@ namespace Data.Question {
       if (other.Guid.Length != 0) {
         Guid = other.Guid;
       }
-      if (other.Type != 0) {
-        Type = other.Type;
+      if (other.Question_.Length != 0) {
+        Question_ = other.Question_;
       }
       answers_.Add(other.answers_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -200,8 +201,8 @@ namespace Data.Question {
             Guid = input.ReadString();
             break;
           }
-          case 16: {
-            Type = input.ReadInt32();
+          case 18: {
+            Question_ = input.ReadString();
             break;
           }
           case 26: {

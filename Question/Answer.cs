@@ -24,12 +24,12 @@ namespace Data.Question {
     static AnswerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxBbnN3ZXIucHJvdG8SDURhdGEuUXVlc3Rpb24iMQoGQW5zd2VyEgoKAmlk",
-            "GAEgASgFEgwKBHRleHQYAiABKAkSDQoFaW1hZ2UYAyABKAliBnByb3RvMw=="));
+            "CgxBbnN3ZXIucHJvdG8SDURhdGEuUXVlc3Rpb24iMwoGQW5zd2VyEgwKBGd1",
+            "aWQYASABKAkSDAoEdGV4dBgCIAEoCRINCgVpbWFnZRgDIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Data.Question.Answer), global::Data.Question.Answer.Parser, new[]{ "Id", "Text", "Image" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Data.Question.Answer), global::Data.Question.Answer.Parser, new[]{ "Guid", "Text", "Image" }, null, null, null)
           }));
     }
     #endregion
@@ -61,7 +61,7 @@ namespace Data.Question {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Answer(Answer other) : this() {
-      id_ = other.id_;
+      guid_ = other.guid_;
       text_ = other.text_;
       image_ = other.image_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -72,14 +72,14 @@ namespace Data.Question {
       return new Answer(this);
     }
 
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 1;
-    private int id_;
+    /// <summary>Field number for the "guid" field.</summary>
+    public const int GuidFieldNumber = 1;
+    private string guid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Id {
-      get { return id_; }
+    public string Guid {
+      get { return guid_; }
       set {
-        id_ = value;
+        guid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -118,7 +118,7 @@ namespace Data.Question {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Id != other.Id) return false;
+      if (Guid != other.Guid) return false;
       if (Text != other.Text) return false;
       if (Image != other.Image) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -127,7 +127,7 @@ namespace Data.Question {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Guid.Length != 0) hash ^= Guid.GetHashCode();
       if (Text.Length != 0) hash ^= Text.GetHashCode();
       if (Image.Length != 0) hash ^= Image.GetHashCode();
       if (_unknownFields != null) {
@@ -143,9 +143,9 @@ namespace Data.Question {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Id != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Id);
+      if (Guid.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Guid);
       }
       if (Text.Length != 0) {
         output.WriteRawTag(18);
@@ -163,8 +163,8 @@ namespace Data.Question {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Id != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      if (Guid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Guid);
       }
       if (Text.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Text);
@@ -183,8 +183,8 @@ namespace Data.Question {
       if (other == null) {
         return;
       }
-      if (other.Id != 0) {
-        Id = other.Id;
+      if (other.Guid.Length != 0) {
+        Guid = other.Guid;
       }
       if (other.Text.Length != 0) {
         Text = other.Text;
@@ -203,8 +203,8 @@ namespace Data.Question {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Id = input.ReadInt32();
+          case 10: {
+            Guid = input.ReadString();
             break;
           }
           case 18: {
