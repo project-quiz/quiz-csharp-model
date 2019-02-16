@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Model {
+namespace Message {
 
   /// <summary>Holder for reflection information generated from base.proto</summary>
   public static partial class BaseReflection {
@@ -24,13 +24,13 @@ namespace Model {
     static BaseReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgpiYXNlLnByb3RvEgVtb2RlbBoZZ29vZ2xlL3Byb3RvYnVmL2FueS5wcm90",
-            "byJACgtCYXNlTWVzc2FnZRIKCgJpZBgBIAEoBRIlCgdtZXNzYWdlGAIgASgL",
-            "MhQuZ29vZ2xlLnByb3RvYnVmLkFueWIGcHJvdG8z"));
+            "CgpiYXNlLnByb3RvEgdtZXNzYWdlGhlnb29nbGUvcHJvdG9idWYvYW55LnBy",
+            "b3RvIkAKC0Jhc2VNZXNzYWdlEgoKAmlkGAEgASgFEiUKB21lc3NhZ2UYAiAB",
+            "KAsyFC5nb29nbGUucHJvdG9idWYuQW55YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.BaseMessage), global::Model.BaseMessage.Parser, new[]{ "Id", "Message" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.BaseMessage), global::Message.BaseMessage.Parser, new[]{ "Id", "Message" }, null, null, null)
           }));
     }
     #endregion
@@ -45,7 +45,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.BaseReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Message.BaseReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

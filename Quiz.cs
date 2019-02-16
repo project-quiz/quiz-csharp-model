@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Model {
+namespace Message {
 
   /// <summary>Holder for reflection information generated from quiz.proto</summary>
   public static partial class QuizReflection {
@@ -24,13 +24,13 @@ namespace Model {
     static QuizReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgpxdWl6LnByb3RvEgVtb2RlbBoOcXVlc3Rpb24ucHJvdG8iRgoEUXVpehIM",
-            "CgRndWlkGAEgASgJEgwKBG5hbWUYAiABKAkSIgoJcXVlc3Rpb25zGAMgAygL",
-            "Mg8ubW9kZWwuUXVlc3Rpb25iBnByb3RvMw=="));
+            "CgpxdWl6LnByb3RvEgdtZXNzYWdlGg5xdWVzdGlvbi5wcm90byJICgRRdWl6",
+            "EgwKBGd1aWQYASABKAkSDAoEbmFtZRgCIAEoCRIkCglxdWVzdGlvbnMYAyAD",
+            "KAsyES5tZXNzYWdlLlF1ZXN0aW9uYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Model.QuestionReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Message.QuestionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.Quiz), global::Model.Quiz.Parser, new[]{ "Guid", "Name", "Questions" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.Quiz), global::Message.Quiz.Parser, new[]{ "Guid", "Name", "Questions" }, null, null, null)
           }));
     }
     #endregion
@@ -45,7 +45,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.QuizReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Message.QuizReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,11 +97,11 @@ namespace Model {
 
     /// <summary>Field number for the "questions" field.</summary>
     public const int QuestionsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Model.Question> _repeated_questions_codec
-        = pb::FieldCodec.ForMessage(26, global::Model.Question.Parser);
-    private readonly pbc::RepeatedField<global::Model.Question> questions_ = new pbc::RepeatedField<global::Model.Question>();
+    private static readonly pb::FieldCodec<global::Message.Question> _repeated_questions_codec
+        = pb::FieldCodec.ForMessage(26, global::Message.Question.Parser);
+    private readonly pbc::RepeatedField<global::Message.Question> questions_ = new pbc::RepeatedField<global::Message.Question>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Model.Question> Questions {
+    public pbc::RepeatedField<global::Message.Question> Questions {
       get { return questions_; }
     }
 

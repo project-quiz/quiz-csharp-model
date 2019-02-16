@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Model {
+namespace Message {
 
   /// <summary>Holder for reflection information generated from game.proto</summary>
   public static partial class GameReflection {
@@ -24,19 +24,19 @@ namespace Model {
     static GameReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgpnYW1lLnByb3RvEgVtb2RlbBoMcGxheWVyLnByb3RvIikKCEpvaW5HYW1l",
-            "Eh0KBlBsYXllchgBIAEoCzINLm1vZGVsLlBsYXllciIMCgpHYW1lSm9pbmVk",
-            "IgsKCUdhbWVTdGFydCIKCghHYW1lU3RvcCIJCgdHYW1lRW5kIgwKCkdhbWVS",
-            "ZXN1bHRiBnByb3RvMw=="));
+            "CgpnYW1lLnByb3RvEgdtZXNzYWdlGgxwbGF5ZXIucHJvdG8iKwoISm9pbkdh",
+            "bWUSHwoGUGxheWVyGAEgASgLMg8ubWVzc2FnZS5QbGF5ZXIiDAoKR2FtZUpv",
+            "aW5lZCILCglHYW1lU3RhcnQiCgoIR2FtZVN0b3AiCQoHR2FtZUVuZCIMCgpH",
+            "YW1lUmVzdWx0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Model.PlayerReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Message.PlayerReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.JoinGame), global::Model.JoinGame.Parser, new[]{ "Player" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.GameJoined), global::Model.GameJoined.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.GameStart), global::Model.GameStart.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.GameStop), global::Model.GameStop.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.GameEnd), global::Model.GameEnd.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.GameResult), global::Model.GameResult.Parser, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.JoinGame), global::Message.JoinGame.Parser, new[]{ "Player" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.GameJoined), global::Message.GameJoined.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.GameStart), global::Message.GameStart.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.GameStop), global::Message.GameStop.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.GameEnd), global::Message.GameEnd.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.GameResult), global::Message.GameResult.Parser, null, null, null, null)
           }));
     }
     #endregion
@@ -54,7 +54,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.GameReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Message.GameReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -82,9 +82,9 @@ namespace Model {
 
     /// <summary>Field number for the "Player" field.</summary>
     public const int PlayerFieldNumber = 1;
-    private global::Model.Player player_;
+    private global::Message.Player player_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Model.Player Player {
+    public global::Message.Player Player {
       get { return player_; }
       set {
         player_ = value;
@@ -153,7 +153,7 @@ namespace Model {
       }
       if (other.player_ != null) {
         if (player_ == null) {
-          player_ = new global::Model.Player();
+          player_ = new global::Message.Player();
         }
         Player.MergeFrom(other.Player);
       }
@@ -170,7 +170,7 @@ namespace Model {
             break;
           case 10: {
             if (player_ == null) {
-              player_ = new global::Model.Player();
+              player_ = new global::Message.Player();
             }
             input.ReadMessage(player_);
             break;
@@ -192,7 +192,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.GameReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Message.GameReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -293,7 +293,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.GameReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Message.GameReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -394,7 +394,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.GameReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Message.GameReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -495,7 +495,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.GameReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Message.GameReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -596,7 +596,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.GameReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Message.GameReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

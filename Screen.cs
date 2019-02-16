@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Model {
+namespace Message {
 
   /// <summary>Holder for reflection information generated from screen.proto</summary>
   public static partial class ScreenReflection {
@@ -24,14 +24,14 @@ namespace Model {
     static ScreenReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxzY3JlZW4ucHJvdG8SBW1vZGVsIh8KDFNjcmVlbkxheW91dBIPCgdDb250",
-            "ZW50GAEgASgJIjMKDFN3aXRjaFNjcmVlbhIjCgZMYXlvdXQYASABKAsyEy5t",
-            "b2RlbC5TY3JlZW5MYXlvdXRiBnByb3RvMw=="));
+            "CgxzY3JlZW4ucHJvdG8SB21lc3NhZ2UiHwoMU2NyZWVuTGF5b3V0Eg8KB0Nv",
+            "bnRlbnQYASABKAkiNQoMU3dpdGNoU2NyZWVuEiUKBkxheW91dBgBIAEoCzIV",
+            "Lm1lc3NhZ2UuU2NyZWVuTGF5b3V0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.ScreenLayout), global::Model.ScreenLayout.Parser, new[]{ "Content" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.SwitchScreen), global::Model.SwitchScreen.Parser, new[]{ "Layout" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.ScreenLayout), global::Message.ScreenLayout.Parser, new[]{ "Content" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.SwitchScreen), global::Message.SwitchScreen.Parser, new[]{ "Layout" }, null, null, null)
           }));
     }
     #endregion
@@ -46,7 +46,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.ScreenReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Message.ScreenReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -178,7 +178,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.ScreenReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Message.ScreenReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -206,9 +206,9 @@ namespace Model {
 
     /// <summary>Field number for the "Layout" field.</summary>
     public const int LayoutFieldNumber = 1;
-    private global::Model.ScreenLayout layout_;
+    private global::Message.ScreenLayout layout_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Model.ScreenLayout Layout {
+    public global::Message.ScreenLayout Layout {
       get { return layout_; }
       set {
         layout_ = value;
@@ -277,7 +277,7 @@ namespace Model {
       }
       if (other.layout_ != null) {
         if (layout_ == null) {
-          layout_ = new global::Model.ScreenLayout();
+          layout_ = new global::Message.ScreenLayout();
         }
         Layout.MergeFrom(other.Layout);
       }
@@ -294,7 +294,7 @@ namespace Model {
             break;
           case 10: {
             if (layout_ == null) {
-              layout_ = new global::Model.ScreenLayout();
+              layout_ = new global::Message.ScreenLayout();
             }
             input.ReadMessage(layout_);
             break;

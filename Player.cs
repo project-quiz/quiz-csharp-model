@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Model {
+namespace Message {
 
   /// <summary>Holder for reflection information generated from player.proto</summary>
   public static partial class PlayerReflection {
@@ -24,21 +24,21 @@ namespace Model {
     static PlayerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxwbGF5ZXIucHJvdG8SBW1vZGVsIigKBlBsYXllchIMCgRndWlkGAEgASgJ",
-            "EhAKCG5pY2tuYW1lGAIgASgJIh4KClBsYXllckpvaW4SEAoIbmlja25hbWUY",
-            "ASABKAkiOwoMUGxheWVySm9pbmVkEgwKBGd1aWQYASABKAkSHQoGcGxheWVy",
-            "GAIgASgLMg0ubW9kZWwuUGxheWVyIjkKClBsYXllckxlZnQSDAoEZ3VpZBgB",
-            "IAEoCRIdCgZwbGF5ZXIYAiABKAsyDS5tb2RlbC5QbGF5ZXIiRQoWUGxheWVy",
-            "c05pY2tOYW1lQ2hhbmdlZBIMCgRndWlkGAEgASgJEh0KBnBsYXllchgCIAEo",
-            "CzINLm1vZGVsLlBsYXllcmIGcHJvdG8z"));
+            "CgxwbGF5ZXIucHJvdG8SB21lc3NhZ2UiKAoGUGxheWVyEgwKBGd1aWQYASAB",
+            "KAkSEAoIbmlja25hbWUYAiABKAkiHgoKUGxheWVySm9pbhIQCghuaWNrbmFt",
+            "ZRgBIAEoCSI9CgxQbGF5ZXJKb2luZWQSDAoEZ3VpZBgBIAEoCRIfCgZwbGF5",
+            "ZXIYAiABKAsyDy5tZXNzYWdlLlBsYXllciI7CgpQbGF5ZXJMZWZ0EgwKBGd1",
+            "aWQYASABKAkSHwoGcGxheWVyGAIgASgLMg8ubWVzc2FnZS5QbGF5ZXIiRwoW",
+            "UGxheWVyc05pY2tOYW1lQ2hhbmdlZBIMCgRndWlkGAEgASgJEh8KBnBsYXll",
+            "chgCIAEoCzIPLm1lc3NhZ2UuUGxheWVyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.Player), global::Model.Player.Parser, new[]{ "Guid", "Nickname" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.PlayerJoin), global::Model.PlayerJoin.Parser, new[]{ "Nickname" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.PlayerJoined), global::Model.PlayerJoined.Parser, new[]{ "Guid", "Player" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.PlayerLeft), global::Model.PlayerLeft.Parser, new[]{ "Guid", "Player" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Model.PlayersNickNameChanged), global::Model.PlayersNickNameChanged.Parser, new[]{ "Guid", "Player" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.Player), global::Message.Player.Parser, new[]{ "Guid", "Nickname" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.PlayerJoin), global::Message.PlayerJoin.Parser, new[]{ "Nickname" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.PlayerJoined), global::Message.PlayerJoined.Parser, new[]{ "Guid", "Player" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.PlayerLeft), global::Message.PlayerLeft.Parser, new[]{ "Guid", "Player" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.PlayersNickNameChanged), global::Message.PlayersNickNameChanged.Parser, new[]{ "Guid", "Player" }, null, null, null)
           }));
     }
     #endregion
@@ -53,7 +53,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.PlayerReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Message.PlayerReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -210,7 +210,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.PlayerReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Message.PlayerReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -342,7 +342,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.PlayerReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Message.PlayerReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -382,9 +382,9 @@ namespace Model {
 
     /// <summary>Field number for the "player" field.</summary>
     public const int PlayerFieldNumber = 2;
-    private global::Model.Player player_;
+    private global::Message.Player player_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Model.Player Player {
+    public global::Message.Player Player {
       get { return player_; }
       set {
         player_ = value;
@@ -465,7 +465,7 @@ namespace Model {
       }
       if (other.player_ != null) {
         if (player_ == null) {
-          player_ = new global::Model.Player();
+          player_ = new global::Message.Player();
         }
         Player.MergeFrom(other.Player);
       }
@@ -486,7 +486,7 @@ namespace Model {
           }
           case 18: {
             if (player_ == null) {
-              player_ = new global::Model.Player();
+              player_ = new global::Message.Player();
             }
             input.ReadMessage(player_);
             break;
@@ -505,7 +505,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.PlayerReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Message.PlayerReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -545,9 +545,9 @@ namespace Model {
 
     /// <summary>Field number for the "player" field.</summary>
     public const int PlayerFieldNumber = 2;
-    private global::Model.Player player_;
+    private global::Message.Player player_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Model.Player Player {
+    public global::Message.Player Player {
       get { return player_; }
       set {
         player_ = value;
@@ -628,7 +628,7 @@ namespace Model {
       }
       if (other.player_ != null) {
         if (player_ == null) {
-          player_ = new global::Model.Player();
+          player_ = new global::Message.Player();
         }
         Player.MergeFrom(other.Player);
       }
@@ -649,7 +649,7 @@ namespace Model {
           }
           case 18: {
             if (player_ == null) {
-              player_ = new global::Model.Player();
+              player_ = new global::Message.Player();
             }
             input.ReadMessage(player_);
             break;
@@ -668,7 +668,7 @@ namespace Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Model.PlayerReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Message.PlayerReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -708,9 +708,9 @@ namespace Model {
 
     /// <summary>Field number for the "player" field.</summary>
     public const int PlayerFieldNumber = 2;
-    private global::Model.Player player_;
+    private global::Message.Player player_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Model.Player Player {
+    public global::Message.Player Player {
       get { return player_; }
       set {
         player_ = value;
@@ -791,7 +791,7 @@ namespace Model {
       }
       if (other.player_ != null) {
         if (player_ == null) {
-          player_ = new global::Model.Player();
+          player_ = new global::Message.Player();
         }
         Player.MergeFrom(other.Player);
       }
@@ -812,7 +812,7 @@ namespace Model {
           }
           case 18: {
             if (player_ == null) {
-              player_ = new global::Model.Player();
+              player_ = new global::Message.Player();
             }
             input.ReadMessage(player_);
             break;
