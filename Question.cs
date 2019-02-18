@@ -24,13 +24,14 @@ namespace Message {
     static QuestionReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5xdWVzdGlvbi5wcm90bxIHbWVzc2FnZRoMYW5zd2VyLnByb3RvIkwKCFF1",
+            "Cg5xdWVzdGlvbi5wcm90bxIHbWVzc2FnZRoMYW5zd2VyLnByb3RvIloKCFF1",
             "ZXN0aW9uEgwKBGd1aWQYASABKAkSEAoIcXVlc3Rpb24YAiABKAkSIAoHYW5z",
-            "d2VycxgDIAMoCzIPLm1lc3NhZ2UuQW5zd2VyYgZwcm90bzM="));
+            "d2VycxgDIAMoCzIPLm1lc3NhZ2UuQW5zd2VyEgwKBFRpbWUYBCABKAViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Message.AnswerReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Message.Question), global::Message.Question.Parser, new[]{ "Guid", "Question_", "Answers" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Message.Question), global::Message.Question.Parser, new[]{ "Guid", "Question_", "Answers", "Time" }, null, null, null)
           }));
     }
     #endregion
@@ -65,6 +66,7 @@ namespace Message {
       guid_ = other.guid_;
       question_ = other.question_;
       answers_ = other.answers_.Clone();
+      time_ = other.time_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -105,6 +107,17 @@ namespace Message {
       get { return answers_; }
     }
 
+    /// <summary>Field number for the "Time" field.</summary>
+    public const int TimeFieldNumber = 4;
+    private int time_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Time {
+      get { return time_; }
+      set {
+        time_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Question);
@@ -121,6 +134,7 @@ namespace Message {
       if (Guid != other.Guid) return false;
       if (Question_ != other.Question_) return false;
       if(!answers_.Equals(other.answers_)) return false;
+      if (Time != other.Time) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,6 +144,7 @@ namespace Message {
       if (Guid.Length != 0) hash ^= Guid.GetHashCode();
       if (Question_.Length != 0) hash ^= Question_.GetHashCode();
       hash ^= answers_.GetHashCode();
+      if (Time != 0) hash ^= Time.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,6 +167,10 @@ namespace Message {
         output.WriteString(Question_);
       }
       answers_.WriteTo(output, _repeated_answers_codec);
+      if (Time != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Time);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -167,6 +186,9 @@ namespace Message {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Question_);
       }
       size += answers_.CalculateSize(_repeated_answers_codec);
+      if (Time != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Time);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -185,6 +207,9 @@ namespace Message {
         Question_ = other.Question_;
       }
       answers_.Add(other.answers_);
+      if (other.Time != 0) {
+        Time = other.Time;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -206,6 +231,10 @@ namespace Message {
           }
           case 26: {
             answers_.AddEntriesFrom(input, _repeated_answers_codec);
+            break;
+          }
+          case 32: {
+            Time = input.ReadInt32();
             break;
           }
         }
